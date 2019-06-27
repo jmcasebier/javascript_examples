@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang='en'>
 	<head>
 		<meta charset='utf-8'>
@@ -11,89 +10,78 @@
 				text-align: center;
 				padding-top: 45px;
 			}
-
 			#title {
 				font-size: 150%;
 			}
-
 			hr {
 				margin: 20px;
 			}
-
 			img {
 				width: 220px;
 			}
-
 			img:hover {
 				border-radius: 120px;
 				box-shadow: 0 0 8px black;
 			}
-
 			#result {
 				font-size: 120%;
 				padding-top: 50px;
 				line-height: 150%;
 			}
-
 			#result b {
 				font-size: 150%;
 			}
 		</style>
 		<script>
 			function roshambo(user) {
+				var result = document.getElementById('result');
 				var comp = Math.floor(Math.random() * 3) + 1;
-
-				if (user === 1) {
-					if (comp === 2) {
-						document.getElementById('result').innerHTML = 'The computer' +
-						' chose Paper.<br>You chose Rock.<br><br><b>You Lose.</b>';
-					} else if (comp === 1) {
-						document.getElementById('result').innerHTML = 'The computer' +
-						' chose Rock.<br>You chose Rock.<br><br><b>It\'s a tie.</b>';
-					} else {
-						document.getElementById('result').innerHTML = 'The computer' +
-						' chose Scissors.<br>You chose Rock.<br><br><b>You win.</b>';
+				if (user === 1) { //user chose rock
+					if (comp === 1) { //comp chose rock
+						result.innerHTML = 'The computer chose Rock.<br>You chose Rock.' +
+						'<br><br><b>It\'s a tie.</b>';
+					} else if (comp === 2) { //comp chose paper
+						result.innerHTML = 'The computer chose Paper.<br>You chose Rock.' +
+						'<br><br><b>You lose.</b>';
+					} else { //comp chose scissors
+						result.innerHTML = 'The computer chose Scissors.<br>You chose Rock.' +
+						'<br><br><b>You win.</b>';
 					}
-				} else if (user === 2) {
-					if (comp === 3) {
-						document.getElementById('result').innerHTML = 'The computer' +
-						' chose Scissors.<br>You chose Paper.<br><br><b>You Lose.</b>';
-					} else if (comp === 2) {
-						document.getElementById('result').innerHTML = 'The computer' +
-						' chose Paper.<br>You chose Paper.<br><br><b>It\'s a tie.</b>';
-					} else {
-						document.getElementById('result').innerHTML = 'The computer' +
-						' chose Rock.<br>You chose Paper.<br><br><b>You win.</b>';
+				} else if (user === 2) { //user chose paper
+					if (comp === 1) { //comp chose rock
+						result.innerHTML = 'The computer chose Rock.<br>You chose Paper.' +
+						'<br><br><b>You win.</b>';
+					} else if (comp === 2) { //comp chose paper
+						result.innerHTML = 'The computer chose Paper.<br>You chose Paper.' +
+						'<br><br><b>It\'s a tie.</b>';
+					} else { //comp chose scissors
+						result.innerHTML = 'The computer chose Scissors.<br>You chose Paper.' +
+						'<br><br><b>You lose.</b>';
 					}
-				} else {
-					if (comp === 1) {
-						document.getElementById('result').innerHTML = 'The computer' +
-						' chose Rock.<br>You chose Scissors.<br><br><b>You Lose.</b>';
-					} else if (comp === 3) {
-						document.getElementById('result').innerHTML = 'The computer' +
-						' chose Scissors.<br>You chose Scissors.<br><br><b>It\'s a tie.</b>';
-					} else {
-						document.getElementById('result').innerHTML = 'The computer' +
-						' chose Paper.<br>You chose Scissors.<br><br><b>You win.</b>';
+				} else { //user chose scissors
+					if (comp === 1) { //comp chose rock
+						result.innerHTML = 'The computer chose Rock.<br>You chose Scissors.' +
+						'<br><br><b>You lose.</b>';
+					} else if (comp === 2) { //comp chose paper
+						result.innerHTML = 'The computer chose Paper.<br>You chose Scissors.' +
+						'<br><br><b>You win.</b>';
+					} else { //comp chose scissors
+						result.innerHTML = 'The computer chose Scissors.<br>You chose Scissors.' +
+						'<br><br><b>It\'s a tie.</b>';
 					}
 				}
 			}
-
 			function clearResult() {
 				document.getElementById('result').innerHTML = '';
 			}
 		</script>
 	</head>
-
 	<body>
 		<p id='title'><b>Rock</b> &minus; Paper &minus; <i>Scissors</i></p>
 		<hr>
-		<img src='images/rock.png' alt='Rock' onmousedown='clearResult()'
-		onclick='roshambo(1)'>
-		<img src='images/paper.png' alt='Paper' onmousedown='clearResult()'
-		onclick='roshambo(2)'>
-		<img src='images/scissors.png' alt='Scissors' onmousedown='clearResult()'
-		onclick='roshambo(3)'>
+		<img src='images/rock.png' alt='Rock' onclick='roshambo(1)' onmousedown='clearResult()'>
+		<img src='images/paper.png' alt='Paper' onclick='roshambo(2)' onmousedown='clearResult()'>
+		<img src='images/scissors.png' alt='Scissors' onclick='roshambo(3)' onmousedown='clearResult()'>
 		<p id='result'></p>
 	</body>
 </html>
