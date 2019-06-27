@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang='en'>
+	<head>
+		<meta charset='utf-8'>
+		<title>Rock &minus; Paper &minus; Scissors</title>
+		<style type='text/css'>
+			body {
+				width: 680px;
+				margin: auto;
+				text-align: center;
+				padding-top: 45px;
+			}
+
+			#title {
+				font-size: 150%;
+			}
+
+			hr {
+				margin: 20px;
+			}
+
+			img {
+				width: 220px;
+			}
+
+			img:hover {
+				border-radius: 15px;
+				box-shadow: 0 0 8px black;
+			}
+
+			#result {
+				font-size: 120%;
+				padding-top: 50px;
+				line-height: 150%;
+			}
+
+			#result b {
+				font-size: 150%;
+			}
+		</style>
+		<script type='text/javascript'>
+			function roshambo(user) {
+				var comp = Math.floor(Math.random() * 3) + 1;
+
+				if (user === 1) {
+					if (comp === 2) {
+						document.getElementById('result').innerHTML = 'The computer' +
+						' chose Paper.<br>You chose Rock.<br><br><b>You Lose.</b>';
+					} else if (comp === 1) {
+						document.getElementById('result').innerHTML = 'The computer' +
+						' chose Rock.<br>You chose Rock.<br><br><b>It\'s a tie.</b>';
+					} else {
+						document.getElementById('result').innerHTML = 'The computer' +
+						' chose Scissors.<br>You chose Rock.<br><br><b>You win.</b>';
+					}
+				} else if (user === 2) {
+					if (comp === 3) {
+						document.getElementById('result').innerHTML = 'The computer' +
+						' chose Scissors.<br>You chose Paper.<br><br><b>You Lose.</b>';
+					} else if (comp === 2) {
+						document.getElementById('result').innerHTML = 'The computer' +
+						' chose Paper.<br>You chose Paper.<br><br><b>It\'s a tie.</b>';
+					} else {
+						document.getElementById('result').innerHTML = 'The computer' +
+						' chose Rock.<br>You chose Paper.<br><br><b>You win.</b>';
+					}
+				} else {
+					if (comp === 1) {
+						document.getElementById('result').innerHTML = 'The computer' +
+						' chose Rock.<br>You chose Scissors.<br><br><b>You Lose.</b>';
+					} else if (comp === 3) {
+						document.getElementById('result').innerHTML = 'The computer' +
+						' chose Scissors.<br>You chose Scissors.<br><br><b>It\'s a tie.</b>';
+					} else {
+						document.getElementById('result').innerHTML = 'The computer' +
+						' chose Paper.<br>You chose Scissors.<br><br><b>You win.</b>';
+					}
+				}
+			}
+
+			function clearResult() {
+				document.getElementById('result').innerHTML = '';
+			}
+		</script>
+	</head>
+
+	<body>
+		<p id='title'><b>Rock</b> &minus; Paper &minus; <i>Scissors</i></p>
+		<hr>
+		<img src='images/rock.png' alt='Rock' onmousedown='clearResult()'
+		onclick='roshambo(1)'>
+		<img src='images/paper.png' alt='Paper' onmousedown='clearResult()'
+		onclick='roshambo(2)'>
+		<img src='images/scissors.png' alt='Scissors' onmousedown='clearResult()'
+		onclick='roshambo(3)'>
+		<p id='result'></p>
+	</body>
+</html>
