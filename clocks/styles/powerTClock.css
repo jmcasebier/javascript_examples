@@ -1,0 +1,29 @@
+//stylesheet for clock3.html
+
+html {
+	background-color: #ffffff;
+}
+
+body {
+	width: 700px;
+	padding: 0;
+	margin: 0;
+}
+
+main {
+	text-align: center;
+}
+
+img {
+	position: relative;
+	padding-top: 2.5em;
+}
+
+#clock {
+	position: absolute;
+	top: 325px;
+	left: 110px;
+	font-family: fantasy;
+	font-size: 750%;
+	color: #ff8200;
+}

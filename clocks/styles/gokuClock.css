@@ -1,0 +1,36 @@
+//stylesheet for clock.html
+
+html {
+	margins: 0;
+	padding: 0;
+	background-color: white;
+}
+
+main {
+	margin-top: 3em;
+	margin-left: 4em;
+	width: 500px;
+	text-align: center;
+	background-image: url("../images/background.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 13px solid #48d1cc;
+	border-radius: 25px;
+	box-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+img {
+	position: relative;
+	padding-bottom: 5em;
+}
+
+h1 {
+	position: absolute;
+	top: 400px;
+	left: 145px;
+	font-family: fantasy;
+	font-size: 450%;
+	color: white;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+

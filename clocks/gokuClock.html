@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Kathleen's Goku Clock</title>
+	<script type="text/javascript">
+		setInterval(function() {
+			var time = new Date();
+			var hour = time.getHours();
+			var minute = time.getMinutes();
+			var second = time.getSeconds();
+			if (hour < 10) hour = "0" + time.getHours();
+			if (minute < 10) minute = "0" + time.getMinutes();
+			if (second < 10) second = "0" + time.getSeconds();
+			document.getElementById("clock").innerHTML = hour + ":" + minute + " " + second;
+		}, 500);
+	</script>
+	<link rel="stylesheet" href="styles/normalize.css">
+	<link rel="stylesheet" href="styles/gokuClock.css">
+</head>
+<body>
+<main>
+	<img id="goku" src="images/goku.png" alt="" width="300px">
+	<h1 id="clock"></h1>
+	</main>
+</body>
+</html>

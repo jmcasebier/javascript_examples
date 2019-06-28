@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Preamble Analysis</title>
+    <meta charset='utf-8'>
+    <script type='text/javascript'>
+      //full preamble text
+      var preamble = 'We the People of the United States, in Order to form a more perfect Union, establish Justice, insure domestic Tranquility, provide for the common defence, promote the general Welfare, and secure the Blessings of Liberty to ourselves and our Posterity, do ordain and establish this Constitution for the United States of America.';
+
+      //initialize word counts
+      var startsWithT = 0;
+      var endsWithE = 0;
+      var both = 0;
+      var totalWords = 0;
+
+      function myFunction(preamble) {
+        //remove all commas
+        var cleanPreamble = preamble.replace(/,/g, '');
+
+        //split preamble into seperate words
+        var preambleArr = cleanPreamble.split(' ');
+
+        //loop through the words of cleanPreamble
+        var i;
+        for (i = 0; i < preambleArr.length; i++) {
+          totalWords += 1;
+          var word = preambleArr[i];
+          //check if word starts both with t and ends with e
+          if (word.charAt(0).toLowerCase() == 't' &&
+          word.charAt(word.length - 1).toLowerCase() == 'e') {
+            both += 1;
+          }
+          //check if word starts with t
+          else if (word.charAt(0).toLowerCase() == 't') {
+            startsWithT += 1;
+          }
+          //check if word ends with e
+          else if (word.charAt(word.length - 1).toLowerCase() == 'e') {
+            endsWithE += 1;
+          }
+        }
+      }
+
+      //pass preamble to function
+      myFunction(preamble);
+      //print count of words that start with t, end with e, both, and total
+      document.write('<h3><b>Preamble to the U.S. Constitution</b>:</h3><br>'
+      + preamble + '<br><br><h3><b>Analysis of words</b>:</h3><br><i>Total '
+      + 'words</i>: <i>' + totalWords + '</i><br>Starts with <b>T</b> but '
+      + 'does <i>not</i> end with <b>E</b>: <i>' + startsWithT
+      + '</i><br>Ends with <b>E</b> but does <i>not</i> start with '
+      + '<b>T</b>: <i>' + endsWithE + '</i><br>Both starts with '
+      + '<b>T</b> <i>and</i> ends with <b>E</b>: <i>' + both + '</i><br>');
+    </script>
+  </head>
+</html>
