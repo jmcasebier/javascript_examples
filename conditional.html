@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <script>
+      var password = prompt("Enter your password:", "");
+
+      /*
+      var message = "";
+      if (password == "password") {
+        message = "Login successful!";
+      } else {
+        message = "Invalid password.";
+      }
+      */
+
+      var message = (password == "password")?"Login successful!"
+      :"Invalid password.";
+      document.write(message);
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

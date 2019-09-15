@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>List</title>
+    <script>
+      function makeList() {
+        var output = document.getElementById("output");
+        var item = prompt("Enter item to add:", "");
+        while(item != "done") {
+          output.innerHTML = output.innerHTML + item + "<br>";
+          item = prompt("Enter item to add (Enter 'done' when finished)", "");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>List</h1>
+    <p id="output"></p>
+    <input type="button" value="Add to list" onclick="makeList()">
+  </body>
+</html>

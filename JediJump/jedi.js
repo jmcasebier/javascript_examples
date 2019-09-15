@@ -1,14 +1,21 @@
 class Jedi {
   constructor() {
-    this.r = 50;
+    this.r = 100;
     this.x = 50;
     this.y = height - this.r;
     this.vy = 0;
-    this.gravity = 1;
+    this.gravity = 2;
   }
 
   jump() {
-    this.vy = -20;
+    if (this.y == height - this.r) {
+      this.vy = -32;
+    }
+  }
+
+  hits(pewpew) {
+    return collideRectRect(this.x, this.y, this.r, this.r, pewpew.x,
+      pewpew.y, pewpew.r, pewpew.r);
   }
 
   move() {

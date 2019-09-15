@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Color Switch</title>
+    <script>
+      function changeColor() {
+        var output = document.getElementById("output");
+        var color = prompt("Enter a color:", "");
+        color = color.toLowerCase();
+        switch(color) {
+          case "red":
+            document.body.style.backgroundColor = "red";
+            output.innerHTML = "";
+            break;
+          case "blue":
+            document.body.style.backgroundColor = "blue";
+            output.innerHTML = "";
+            break;
+          case "green":
+            document.body.style.backgroundColor = "green";
+            output.innerHTML = "";
+            break;
+          case "yellow":
+            document.body.style.backgroundColor = "yellow";
+            output.innerHTML = "";
+            break;
+          default:
+            output.innerHTML = "Invalid entry";
+            break;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <input type="button" value="Change Color" onclick="changeColor()">
+    <h2 id="output"></h2>
+  </body>
+</html>
