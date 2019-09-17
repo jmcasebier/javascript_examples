@@ -1,0 +1,14 @@
+html {
+  background-color: #ea6fd8;
+}
+body {
+  width: 1000px;
+  margin: auto;
+  padding-top: 10em;
+  text-align: center;
+}
+output {
+  font-size: 1000%;
+  font-weight: bold;
+  color: #fadadd;
+}

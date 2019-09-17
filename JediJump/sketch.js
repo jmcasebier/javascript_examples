@@ -10,7 +10,7 @@ let gameOver;
 
 function preload() {
   const options = { probabilityThreshold: 0.85 };
-  soundClassifier = ml5.soundClassifier('SpeechCommands18w', options);
+  //soundClassifier = ml5.soundClassifier('SpeechCommands18w', options);
   pewpewImg = loadImage('pewpew.png');
   stormTrooperImg = loadImage('stormTrooper.png');
   jediImg = loadImage('jedi.png');
@@ -24,7 +24,7 @@ function setup() {
   stormTrooper = new StormTrooper();
   jedi = new Jedi();
   count = 0;
-  soundClassifier.classify(gotCommand);
+  //soundClassifier.classify(gotCommand);
 }
 
 function gotCommand(error, result) {
